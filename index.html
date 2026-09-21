@@ -10,6 +10,9 @@
     <meta name="keywords" content="Zenithio, ব্লগ, শিক্ষামূলক কনটেন্ট, নেপাল বন্যা, প্রযুক্তি, গল্প">
     <meta name="author" content="Zenithio">
 
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         * {
             box-sizing: border-box;
@@ -378,7 +381,7 @@
             color: #000;
         }
 
-        /* গ্যালারি স্টাইল */
+        /* প্রজেক্ট গ্যালারি স্টাইল */
         .gallery-container {
             display: flex;
             gap: 20px;
@@ -395,35 +398,85 @@
             flex: 1 1 250px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .gallery-card img {
-            max-width: 100%;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
             border-radius: 5px;
+            margin-bottom: 12px;
         }
 
-        /* ফর্ম */
-        input[type="text"], input[type="email"] {
+        .demo-btn {
+            display: inline-block;
+            background-color: #4cae4c;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            background-color: #3e8e41;
+        }
+
+        /* উন্নত কন্টাক্ট সেকশন */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            font-size: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+        }
+
+        .contact-info i {
+            color: #4cae4c;
+            font-size: 18px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-family: inherit;
         }
 
         button.btn-submit {
             background-color: #4cae4c;
             color: white;
             border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
+            padding: 12px;
             cursor: pointer;
             border-radius: 4px;
             font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease;
         }
 
         button.btn-submit:hover {
-            background-color: #45a049;
+            background-color: #3e8e41;
         }
 
         footer {
@@ -539,44 +592,68 @@
             </ul>
         </section>
 
-        <!-- প্রজেক্ট গ্যালারি সেকশন -->
+        <!-- প্রজেক্ট গ্যালারি সেকশন (ছবি ও বাটনসহ) -->
         <section id="gallery">
             <h2 class="lang" key="gallery-title">আমার প্রজেক্ট গ্যালারি</h2>
             <p class="lang" key="gallery-sub">নিচে আমার তৈরি কিছু কাজের নমুনা দেওয়া হলো:</p>
 
             <div class="gallery-container">
                 <div class="gallery-card">
-                    <img src="https://via.placeholder.com/300x200" alt="প্রজেক্ট ১">
-                    <h3 class="lang" key="proj1-title">ই-কমার্স ওয়েবসাইট</h3>
-                    <p class="lang" key="proj1-desc">একটি সম্পূর্ণ রেসপন্সিভ ই-কমার্স সাইট।</p>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1556742049-0a6754095191?q=80&w=500" alt="ই-কমার্স">
+                        <h3 class="lang" key="proj1-title">ই-কমার্স ওয়েবসাইট</h3>
+                        <p class="lang" key="proj1-desc">একটি সম্পূর্ণ রেসপন্সিভ ই-কমার্স সাইট।</p>
+                    </div>
+                    <a href="#" class="demo-btn lang" key="btn-demo">লাইভ ডেমো</a>
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://via.placeholder.com/300x200" alt="প্রজেক্ট ২">
-                    <h3 class="lang" key="proj2-title">ব্লগ সাইট</h3>
-                    <p class="lang" key="proj2-desc">আধুনিক ডিজাইন এবং দ্রুত লোড হওয়া ব্লগ পেজ।</p>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=500" alt="ব্লগ সাইট">
+                        <h3 class="lang" key="proj2-title">ব্লগ সাইট</h3>
+                        <p class="lang" key="proj2-desc">আধুনিক ডিজাইন এবং দ্রুত লোড হওয়া ব্লগ পেজ।</p>
+                    </div>
+                    <a href="#" class="demo-btn lang" key="btn-demo">লাইভ ডেমো</a>
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://via.placeholder.com/300x200" alt="প্রজেক্ট ৩">
-                    <h3 class="lang" key="proj3-title">বিজনেস পোর্টফোলিও</h3>
-                    <p class="lang" key="proj3-desc">যেকোনো কোম্পানির জন্য প্রফেশনাল পোর্টফোলিও।</p>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500" alt="বিজনেস পোর্টফোলিও">
+                        <h3 class="lang" key="proj3-title">বিজনেস পোর্টফোলিও</h3>
+                        <p class="lang" key="proj3-desc">যেকোনো কোম্পানির জন্য প্রফেশনাল পোর্টফোলিও।</p>
+                    </div>
+                    <a href="#" class="demo-btn lang" key="btn-demo">লাইভ ডেমো</a>
                 </div>
             </div>
         </section>
 
-        <!-- কন্টাক্ট সেকশন -->
+        <!-- কন্টাক্ট সেকশন (উন্নত সংস্করণ) -->
         <section id="contact">
             <h2 class="lang" key="contact-title">যোগাযোগ করুন</h2>
-            <form>
-                <label for="name" class="lang" key="label-name">নাম:</label><br>
-                <input type="text" id="name" name="name" placeholder="আপনার নাম"><br><br>
-                
-                <label for="email" class="lang" key="label-email">ইমেইল:</label><br>
-                <input type="email" id="email" name="email" placeholder="আপনার ইমেইল"><br><br>
-                
-                <button type="submit" class="btn-submit lang" key="btn-submit">পাঠিয়ে দিন</button>
-            </form>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="lang" key="contact-sub">আমাদের সাথে থাকুন</h3>
+                    <p class="lang" key="contact-desc">যেকোনো প্রশ্ন বা প্রজেক্ট আলোচনার জন্য বার্তা দিন।</p>
+                    <br>
+                    <p><i class="fa-solid fa-envelope"></i> contact@zenithio.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +880 1700-000000</p>
+                    <p><i class="fa-solid fa-location-dot"></i> ঢাকা, বাংলাদেশ</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <label for="name" class="lang" key="label-name">নাম:</label>
+                        <input type="text" id="name" name="name" placeholder="আপনার নাম" required>
+                        
+                        <label for="email" class="lang" key="label-email">ইমেইল:</label>
+                        <input type="email" id="email" name="email" placeholder="আপনার ইমেইল" required>
+                        
+                        <label for="message" class="lang" key="label-msg">বার্তা:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="আপনার বার্তাটি লিখুন..." required></textarea>
+                        
+                        <button type="submit" class="btn-submit lang" key="btn-submit">পাঠিয়ে দিন</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -725,9 +802,13 @@
                 "proj2-desc": "আধুনিক ডিজাইন এবং দ্রুত লোড হওয়া ব্লগ পেজ।",
                 "proj3-title": "বিজনেস পোর্টফোলিও",
                 "proj3-desc": "যেকোনো কোম্পানির জন্য প্রফেশনাল পোর্টফোলিও।",
+                "btn-demo": "লাইভ ডেমো",
                 "contact-title": "যোগাযোগ করুন",
+                "contact-sub": "আমাদের সাথে থাকুন",
+                "contact-desc": "যেকোনো প্রশ্ন বা প্রজেক্ট আলোচনার জন্য বার্তা দিন।",
                 "label-name": "নাম:",
                 "label-email": "ইমেইল:",
+                "label-msg": "বার্তা:",
                 "btn-submit": "পাঠিয়ে দিন",
                 "footer": "© ২০২৬ Zenithio। সর্বস্বত্ব সংরক্ষিত।"
             },
@@ -773,9 +854,13 @@
                 "proj2-desc": "Modern design with fast-loading pages.",
                 "proj3-title": "Business Portfolio",
                 "proj3-desc": "Professional portfolio suitable for any business.",
+                "btn-demo": "Live Demo",
                 "contact-title": "Get in Touch",
+                "contact-sub": "Stay Connected",
+                "contact-desc": "Feel free to drop a message for any query or project discussion.",
                 "label-name": "Name:",
                 "label-email": "Email:",
+                "label-msg": "Message:",
                 "btn-submit": "Submit",
                 "footer": "© 2026 Zenithio. All rights reserved."
             }
@@ -794,6 +879,7 @@
             // প্লেসহোল্ডার পরিবর্তন
             document.getElementById('name').placeholder = lang === 'bn' ? 'আপনার নাম' : 'Your Name';
             document.getElementById('email').placeholder = lang === 'bn' ? 'আপনার ইমেইল' : 'Your Email';
+            document.getElementById('message').placeholder = lang === 'bn' ? 'আপনার বার্তাটি লিখুন...' : 'Write your message...';
 
             // বাটন অ্যাক্টিভ ক্লাস
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
